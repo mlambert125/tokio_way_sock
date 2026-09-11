@@ -2,12 +2,13 @@
 name = "tokio_way_sock"
 version = "0.1.0"
 edition = "2024"
-description = "The Wayland wire transport: a listening Unix socket, message framing, and file descriptor passing."
+description = "A Tokio-Based Wayland Unix Socket Listener"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/"
 readme = "README.md"
-keywords = ["wayland", "compositor", "socket", "unix"]
+keywords = ["tokio", "wayland", "compositor", "socket", "unix"]
 categories = ["network-programming", "os::unix-apis"]
+homepage = "https://github.com/mlambert125/tokio_way_sock"
+repository = "https://github.com/mlambert125/tokio_way_sock"
 
 [dependencies]
 anyhow = "1.0.100"
