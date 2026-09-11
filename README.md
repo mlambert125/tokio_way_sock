@@ -31,7 +31,7 @@ let socket_handle = tokio::spawn(tokio_way_socket::run_wayland_socket(
 
 // TODO: poll `wayland_message_rx` here or on another thread to get incoming
 //       clients and wayland messages and process them.  A new client gives back
-//       a sender channel for the compositor to send events back on the socket
+//       a sender channel for the compositor to send events back on the socket.
 
 ```
 ### One Shot Ready Message
@@ -63,7 +63,7 @@ processes messages that require them.  To keep ordering/processing correct, you
 ### CancellationToken
 
 The passed in cancellation token is the top-level cancellation token that can
-be signalled to gracefully shut down the entire socket gracefully.
+be signalled to shut down the entire socket gracefully.
 
 ## Building
 

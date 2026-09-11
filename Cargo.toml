@@ -1,6 +1,6 @@
 [package]
 name = "tokio_way_sock"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "A Tokio-Based Wayland Unix Socket Listener"
 license = "MIT OR Apache-2.0"
