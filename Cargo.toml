@@ -1,0 +1,18 @@
+[package]
+name = "tokio_way_sock"
+version = "0.1.0"
+edition = "2024"
+description = "The Wayland wire transport: a listening Unix socket, message framing, and file descriptor passing."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/"
+readme = "README.md"
+keywords = ["wayland", "compositor", "socket", "unix"]
+categories = ["network-programming", "os::unix-apis"]
+
+[dependencies]
+anyhow = "1.0.100"
+libc = "0.2.186"
+sendfd = { version = "0.4.4", features = ["tokio"] }
+tracing = { version = "0.1.41" }
+tokio = { version = "1.48", features = ["full"] }
+tokio-util = "0.7.18"
