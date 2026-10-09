@@ -326,16 +326,16 @@ fn handle_client(
                     }
 
                     let mut messages = Vec::new();
-                    let mut malformed = false;
+                    let mut malformed_encountered = false;
                     loop {
                         match take_message(&mut data) {
                             Framed::Message(msg) => messages.push(msg),
                             Framed::Incomplete => break,
                             Framed::Malformed(length) => {
                                 debug!(
-                                    "Invalid message length {length} from client, disconnecting"
+                                    "Invalid message length {length} from client, stopping future messsage reads and disconnecting after sending prior messages in batch"
                                 );
-                                malformed = true;
+                                malformed_encountered = true;
                                 break;
                             }
                         }
@@ -354,7 +354,7 @@ fn handle_client(
                         break;
                     }
 
-                    if malformed {
+                    if malformed_encountered {
                         break;
                     }
                 }
